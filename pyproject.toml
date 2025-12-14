@@ -1,0 +1,22 @@
+[project]
+name = "picstream"
+version = "1.0.0"
+description = "A modern social media platform with FastAPI backend and React frontend"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.13"
+keywords = ["fastapi", "social-media", "react", "typescript", "imagekit"]
+authors = [{ name = "Your Name", email = "your@email.com" }]
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.123.3",
+    "fastapi-users[sqlalchemy]>=15.0.1",
+    "imagekitio>=4.2.0",
+    "python-dotenv>=1.2.1",
+    "uvicorn[standard]>=0.38.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/picstream"
+Repository = "https://github.com/yourusername/picstream"
+Documentation = "https://github.com/yourusername/picstream#readme"
