@@ -6,7 +6,7 @@ readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.13"
 keywords = ["fastapi", "social-media", "react", "typescript", "imagekit"]
-authors = [{ name = "Your Name", email = "your@email.com" }]
+authors = [{ name = "Yaprak Öse", email = "yaprakose@example.com" }]
 dependencies = [
     "aiosqlite>=0.21.0",
     "fastapi>=0.123.3",
@@ -17,6 +17,6 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/picstream"
-Repository = "https://github.com/yourusername/picstream"
-Documentation = "https://github.com/yourusername/picstream#readme"
+Homepage = "https://github.com/yaprakose/picstream"
+Repository = "https://github.com/yaprakose/picstream"
+Documentation = "https://github.com/yaprakose/picstream#readme"

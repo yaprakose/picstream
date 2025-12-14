@@ -38,11 +38,11 @@ const formatDate = (date: Date) => {
   const diffHours = Math.floor(diffMs / 3600000);
   const diffDays = Math.floor(diffMs / 86400000);
 
-  if (diffMins < 1) return "Şimdi";
-  if (diffMins < 60) return `${diffMins}dk`;
-  if (diffHours < 24) return `${diffHours}sa`;
-  if (diffDays < 7) return `${diffDays}g`;
-  return new Date(date).toLocaleDateString("tr-TR");
+  if (diffMins < 1) return "Now";
+  if (diffMins < 60) return `${diffMins}m`;
+  if (diffHours < 24) return `${diffHours}h`;
+  if (diffDays < 7) return `${diffDays}d`;
+  return new Date(date).toLocaleDateString("en-US");
 };
 
 const PostCard = ({
@@ -155,7 +155,7 @@ const PostCard = ({
             onClick={() => setShowComments(true)}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            {post.comments.length} yorumu görüntüle
+            View {post.comments.length} comments
           </button>
         )}
 
@@ -200,7 +200,7 @@ const PostCard = ({
                 type="text"
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
-                placeholder="Yorum yaz..."
+                placeholder="Write a comment..."
                 className="flex-1 px-4 py-2 bg-secondary border border-border rounded-full text-sm focus:outline-none focus:border-primary transition-colors"
               />
               <button
@@ -223,7 +223,7 @@ const PostCard = ({
               type="text"
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
-              placeholder="Yorum yaz..."
+              placeholder="Write a comment..."
               className="flex-1 px-4 py-2 bg-secondary border border-border rounded-full text-sm focus:outline-none focus:border-primary transition-colors"
             />
             <button

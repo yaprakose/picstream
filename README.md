@@ -27,8 +27,8 @@ A full-stack social media application built with **FastAPI** and **React**, feat
 </p>
 
 <p align="center">
-  <img src="screenshots/mobile.png" alt="Mobile View" width="300">
-  <img src="screenshots/login.png" alt="Login Modal" width="300">
+  <img src="screenshots/landing.png" alt="Landing Page" width="400">
+  <img src="screenshots/login.png" alt="Login Modal" width="200">
 </p>
 
 ## 🛠️ Tech Stack
@@ -67,7 +67,7 @@ A full-stack social media application built with **FastAPI** and **React**, feat
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/picstream.git
+git clone https://github.com/yaprakose/picstream.git
 cd picstream
 
 # Create virtual environment
@@ -217,10 +217,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Your Name**
+**Yaprak Öse**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
+- GitHub: [@yaprakose](https://github.com/yaprakose)
+
 
 ---
 

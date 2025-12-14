@@ -68,7 +68,7 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
                   className="flex items-center gap-2 px-2 sm:px-4 py-2 rounded-lg border border-border hover:bg-secondary transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
-                  <span className="hidden sm:block text-sm font-medium">Çıkış</span>
+                  <span className="hidden sm:block text-sm font-medium">Logout</span>
                 </button>
               </>
             ) : (
@@ -78,14 +78,14 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
                   className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary/90 rounded-lg transition-colors"
                 >
                   <LogIn className="w-4 h-4" />
-                  <span className="hidden sm:block text-sm font-medium">Giriş</span>
+                  <span className="hidden sm:block text-sm font-medium">Login</span>
                 </button>
                 <button
                   onClick={() => setShowRegisterModal(true)}
                   className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg border border-border hover:bg-secondary transition-colors"
                 >
                   <UserPlus className="w-4 h-4" />
-                  <span className="hidden sm:block text-sm font-medium">Kayıt</span>
+                  <span className="hidden sm:block text-sm font-medium">Sign Up</span>
                 </button>
               </>
             )}
@@ -111,7 +111,7 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 border-b border-border flex items-center justify-between">
-                <h2 className="text-xl font-bold">Hoş Geldiniz</h2>
+                <h2 className="text-xl font-bold">Welcome Back</h2>
                 <button
                   onClick={() => setShowLoginModal(false)}
                   className="p-2 hover:bg-secondary rounded-lg transition-colors"
@@ -122,20 +122,20 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
               <form onSubmit={handleLogin} className="p-6 space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-muted-foreground mb-2">
-                    E-posta
+                    Email
                   </label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                    placeholder="ornek@email.com"
+                    placeholder="example@email.com"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-muted-foreground mb-2">
-                    Şifre
+                    Password
                   </label>
                   <input
                     type="password"
@@ -150,7 +150,7 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
                   type="submit"
                   className="w-full py-3 bg-primary hover:bg-primary/90 rounded-lg font-semibold transition-colors"
                 >
-                  Giriş Yap
+                  Sign In
                 </button>
               </form>
             </motion.div>
@@ -176,7 +176,7 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 border-b border-border flex items-center justify-between">
-                <h2 className="text-xl font-bold">Hesap Oluştur</h2>
+                <h2 className="text-xl font-bold">Create Account</h2>
                 <button
                   onClick={() => setShowRegisterModal(false)}
                   className="p-2 hover:bg-secondary rounded-lg transition-colors"
@@ -187,27 +187,27 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
               <form onSubmit={handleRegister} className="p-6 space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-muted-foreground mb-2">
-                    E-posta
+                    Email
                   </label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                    placeholder="ornek@email.com"
+                    placeholder="example@email.com"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-muted-foreground mb-2">
-                    Şifre
+                    Password
                   </label>
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                    placeholder="En az 8 karakter"
+                    placeholder="At least 8 characters"
                     minLength={8}
                     required
                   />
@@ -216,7 +216,7 @@ const Navbar = ({ user, onLogin, onRegister, onLogout }: NavbarProps) => {
                   type="submit"
                   className="w-full py-3 bg-primary hover:bg-primary/90 rounded-lg font-semibold transition-colors"
                 >
-                  Kayıt Ol
+                  Sign Up
                 </button>
               </form>
             </motion.div>

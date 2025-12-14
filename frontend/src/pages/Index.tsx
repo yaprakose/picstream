@@ -70,7 +70,7 @@ const Index = () => {
       }
     } catch (error) {
       console.error("Failed to load feed:", error);
-      toast.error("Feed yüklenemedi");
+      toast.error("Failed to load feed");
     } finally {
       setLoading(false);
     }
@@ -93,13 +93,13 @@ const Index = () => {
         localStorage.setItem("token", data.access_token);
         setToken(data.access_token);
         setUser({ email });
-        toast.success("Hoş geldiniz!");
+        toast.success("Welcome back!");
         loadFeed();
       } else {
-        toast.error("Geçersiz e-posta veya şifre");
+        toast.error("Invalid email or password");
       }
     } catch (error) {
-      toast.error("Giriş başarısız");
+      toast.error("Login failed");
     }
   };
 
@@ -112,13 +112,13 @@ const Index = () => {
       });
 
       if (response.ok) {
-        toast.success("Hesabınız oluşturuldu! Giriş yapabilirsiniz.");
+        toast.success("Account created! You can now sign in.");
       } else {
         const error = await response.json();
-        toast.error(error.detail || "Kayıt başarısız");
+        toast.error(error.detail || "Registration failed");
       }
     } catch (error) {
-      toast.error("Kayıt başarısız");
+      toast.error("Registration failed");
     }
   };
 
@@ -137,13 +137,13 @@ const Index = () => {
     localStorage.removeItem("token");
     setToken(null);
     setUser(null);
-    loadFeed();
-    toast.success("Çıkış yapıldı");
+    setPosts([]);
+    toast.success("Logged out");
   };
 
   const handlePost = async (file: File, caption: string) => {
     if (!token) {
-      toast.error("Gönderi paylaşmak için giriş yapın");
+      toast.error("Sign in to share posts");
       return;
     }
 
@@ -159,20 +159,20 @@ const Index = () => {
       });
 
       if (response.ok) {
-        toast.success("Gönderi paylaşıldı!");
+        toast.success("Post shared!");
         loadFeed();
       } else {
         const error = await response.json();
-        toast.error(error.detail || "Yükleme başarısız");
+        toast.error(error.detail || "Upload failed");
       }
     } catch (error) {
-      toast.error("Yükleme başarısız");
+      toast.error("Upload failed");
     }
   };
 
   const handleLike = async (postId: string) => {
     if (!token) {
-      toast.error("Beğenmek için giriş yapın");
+      toast.error("Sign in to like posts");
       return;
     }
 
@@ -201,13 +201,13 @@ const Index = () => {
         );
       }
     } catch (error) {
-      toast.error("İşlem başarısız");
+      toast.error("Operation failed");
     }
   };
 
   const handleComment = async (postId: string, content: string) => {
     if (!token) {
-      toast.error("Yorum yapmak için giriş yapın");
+      toast.error("Sign in to comment");
       return;
     }
 
@@ -243,12 +243,12 @@ const Index = () => {
         );
       }
     } catch (error) {
-      toast.error("Yorum eklenemedi");
+      toast.error("Failed to add comment");
     }
   };
 
   const handleDeletePost = async (postId: string) => {
-    if (!confirm("Bu gönderiyi silmek istediğinize emin misiniz?")) return;
+    if (!confirm("Are you sure you want to delete this post?")) return;
 
     try {
       const response = await fetch(`${API_URL}/posts/${postId}`, {
@@ -258,12 +258,12 @@ const Index = () => {
 
       if (response.ok) {
         setPosts(posts.filter((post) => post.id !== postId));
-        toast.success("Gönderi silindi");
+        toast.success("Post deleted");
       } else {
-        toast.error("Silme başarısız");
+        toast.error("Delete failed");
       }
     } catch (error) {
-      toast.error("Silme başarısız");
+      toast.error("Delete failed");
     }
   };
 
@@ -286,10 +286,10 @@ const Index = () => {
             return post;
           })
         );
-        toast.success("Yorum silindi");
+        toast.success("Comment deleted");
       }
     } catch (error) {
-      toast.error("Yorum silinemedi");
+      toast.error("Failed to delete comment");
     }
   };
 
@@ -328,6 +328,7 @@ const Index = () => {
               onDelete={handleDeletePost}
               onDeleteComment={handleDeleteComment}
               currentUser={user?.email || null}
+              isLoggedIn={!!user}
             />
           </section>
         </div>

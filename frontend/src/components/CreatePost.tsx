@@ -57,7 +57,7 @@ const CreatePost = ({ onPost, isLoggedIn }: CreatePostProps) => {
       >
         <div className="text-center text-muted-foreground">
           <Upload className="w-12 h-12 mx-auto mb-3 opacity-50" />
-          <p>Gönderi paylaşmak için giriş yapın</p>
+          <p>Sign in to share posts</p>
         </div>
       </motion.div>
     );
@@ -71,7 +71,7 @@ const CreatePost = ({ onPost, isLoggedIn }: CreatePostProps) => {
     >
       <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
         <Upload className="w-5 h-5 text-primary" />
-        <h3 className="font-semibold">Gönderi Oluştur</h3>
+        <h3 className="font-semibold">Create Post</h3>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -89,10 +89,10 @@ const CreatePost = ({ onPost, isLoggedIn }: CreatePostProps) => {
               <Video className="w-8 h-8 text-muted-foreground" />
             </div>
             <p className="text-sm text-muted-foreground">
-              <span className="text-primary font-medium">Tıkla</span> veya sürükle bırak
+              <span className="text-primary font-medium">Click</span> or drag and drop
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              Resim veya Video
+              Image or Video
             </p>
           </label>
         ) : (
@@ -123,7 +123,7 @@ const CreatePost = ({ onPost, isLoggedIn }: CreatePostProps) => {
         <textarea
           value={caption}
           onChange={(e) => setCaption(e.target.value)}
-          placeholder="Bir açıklama yazın..."
+          placeholder="Write a caption..."
           className="w-full px-4 py-3 bg-secondary border border-border rounded-xl resize-none h-24 focus:outline-none focus:border-primary transition-colors"
         />
 
@@ -133,7 +133,7 @@ const CreatePost = ({ onPost, isLoggedIn }: CreatePostProps) => {
           className="w-full py-3 bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors"
         >
           <Send className="w-4 h-4" />
-          Paylaş
+          Share
         </button>
       </form>
     </motion.div>
